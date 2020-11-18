@@ -1,0 +1,26 @@
+<div class="container">
+<form>
+    <h1>Add New</h1><hr>
+    <div class="form-group">
+        <label for="exampleInputUsername">Fullname</label>
+        <input type="text" name="fullname" [(ngModel)]="student.fullname" class="form-control" id="exampleInputUsername" placeholder="Your Fullname">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputBirthday">Birthday</label>
+        <input type="date" name="birthday" [(ngModel)]="student.birthday" class="form-control" id="exampleInputBirthday" placeholder="Your Birthday">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail">Email</label>
+      <input type="email" name="email" [(ngModel)]="student.email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputlevel">Level</label>
+        <input type="text" name="level" [(ngModel)]="student.level" class="form-control" id="exampleInputlevel" placeholder="Username">
+    </div>
+    <div>
+    <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+    <br><br>
+  </form>
+  </div>
+

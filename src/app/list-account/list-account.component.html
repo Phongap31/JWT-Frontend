@@ -1,0 +1,27 @@
+<h1>Management Student</h1>
+<hr>
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th>No</th>
+            <th>Fullname</th>
+            <th>Birthday</th>
+            <th>Email</th>
+            <th>Level</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stu of listStudent; let i = index" [attr.data-index] = "i">
+            <td>{{i+1}}</td>
+            <td>{{stu.fullname}}</td>
+            <td>{{stu.birthday}}</td>
+            <td>{{stu.email}}</td>
+            <td>{{stu.level}}</td>
+            <td>
+                <button type="submit" (submit) = "delete(stu.id)" class="btn btn-warning">Remove</button>
+                <button class="btn btn-info">Update</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
