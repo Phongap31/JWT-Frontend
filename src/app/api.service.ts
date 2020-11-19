@@ -14,7 +14,7 @@ export class ApiService {
   }
 
   public deleteStudent(id){
-    return this.http.post<any>(`${this.url}/delete_stu`, id)
+    return this.http.delete<any>(`${this.url}/delete_stu/${id}`)
   }
   public addStudent(fullname, birthday, email, level){
     var params = {
@@ -25,4 +25,7 @@ export class ApiService {
     }
     return this.http.post<any>(`${this.url}/add_stu`, params);
   }
+
+  
+
 }

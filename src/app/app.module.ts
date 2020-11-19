@@ -12,7 +12,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { ListAccountComponent } from './list-account/list-account.component';
 import { AddAccountComponent } from './add-account/add-account.component';
 import {ApiService} from './api.service';
-import { from } from 'rxjs';
 import { UpdateAccountComponent } from './update-account/update-account.component';
 
 @NgModule({

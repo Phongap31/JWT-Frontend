@@ -19,7 +19,7 @@
             <td>{{stu.email}}</td>
             <td>{{stu.level}}</td>
             <td>
-                <button type="submit" (submit) = "delete(stu.id)" class="btn btn-warning">Remove</button>
+                <button type="submit" (click)="delete(stu.id)" class="btn btn-warning">Remove</button>
                 <button class="btn btn-info">Update</button>
             </td>
         </tr>

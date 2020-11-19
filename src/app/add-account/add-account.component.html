@@ -18,7 +18,7 @@
         <input type="text" name="level" [(ngModel)]="student.level" class="form-control" id="exampleInputlevel" placeholder="Username">
     </div>
     <div>
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" (click)="addStudent()" class="btn btn-primary">Add</button>
     </div>
     <br><br>
   </form>

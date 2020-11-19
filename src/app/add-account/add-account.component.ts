@@ -21,7 +21,9 @@ export class AddAccountComponent implements OnInit {
   ngOnInit(): void {
   }
   addStudent(){
-    this.api.addStudent(this.student.fullname, this.student.birthday, this.student.email, this.student.level).subscribe();
+    this.api.addStudent(this.student.fullname, this.student.birthday, this.student.email, this.student.level).subscribe(()=>{
+      this.router.navigateByUrl('/list');
+    });
   }
 
 }
