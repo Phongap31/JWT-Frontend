@@ -25,7 +25,8 @@ export class ListAccountComponent implements OnInit {
   }
   delete(id){
     this.api.deleteStudent(id).subscribe(()=>{
-      this.load();
+      // this.load();
+      this.router.navigateByUrl('/list')
     });
   }
 }

@@ -19,8 +19,8 @@
             <td>{{stu.email}}</td>
             <td>{{stu.level}}</td>
             <td>
-                <button type="submit" (click)="delete(stu.id)" class="btn btn-warning">Remove</button>
-                <button class="btn btn-info">Update</button>
+                <a type="submit" (click)="delete(stu.id)" class="btn btn-warning">Remove</a>
+                <a class="btn btn-info" routerLink="/update/{{stu.id}}">Update</a>
             </td>
         </tr>
     </tbody>

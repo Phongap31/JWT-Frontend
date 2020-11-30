@@ -3,22 +3,22 @@
         <h1>Update Info</h1><hr>
         <div class="form-group">
             <label for="exampleInputUsername">Fullname</label>
-            <input type="text" class="form-control" id="exampleInputUsername" placeholder="Your Fullname">
+            <input type="text" name="fullname" [(ngModel)]="userUpdate.fullname" class="form-control" id="exampleInputUsername" placeholder="Your Fullname">
         </div>
         <div class="form-group">
             <label for="exampleInputBirthday">Birthday</label>
-            <input type="date" class="form-control" id="exampleInputBirthday" placeholder="Your Birthday">
+            <input type="date" name="birthday" [(ngModel)]="userUpdate.birthday" class="form-control" id="exampleInputBirthday" placeholder="Your Birthday">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="email" name="email" [(ngModel)]="userUpdate.email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
         <div class="form-group">
             <label for="exampleInputlevel">Level</label>
-            <input type="text" class="form-control" id="exampleInputlevel" placeholder="Username">
+            <input type="text" name="level" [(ngModel)]="userUpdate.level" class="form-control" id="exampleInputlevel" placeholder="Username">
         </div>
         <div>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" (click)="update()" class="btn btn-primary">Update</button>
         </div>
         <br><br>
       </form>

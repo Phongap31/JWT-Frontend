@@ -26,6 +26,18 @@ export class ApiService {
     return this.http.post<any>(`${this.url}/add_stu`, params);
   }
 
-  
+  public updateStudent(id, fullname, birthday, email, level){
+    var params = {
+      fullname: fullname,
+      birthday: birthday,
+      email: email,
+      level: level
+    }
+    return this.http.post<any>(`${this.url}/update/${id}`, params);
+  }
+
+  getCurrentAccount(id){
+    return this.http.get<any>(`${this.url}/get_current/${id}`);
+  }
 
 }

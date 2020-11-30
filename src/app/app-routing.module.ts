@@ -8,6 +8,7 @@ import {ProfileComponent} from './profile/profile.component';
 import {ListAccountComponent} from './list-account/list-account.component';
 import {AddAccountComponent} from './add-account/add-account.component';
 import {UpdateAccountComponent} from './update-account/update-account.component';
+import {AuthGuardService} from './auth-guard.service';
 
 const routes: Routes = [
   {
@@ -23,16 +24,16 @@ const routes: Routes = [
     path: '', component: HomepageComponent
   },
   {
-    path: 'profile', component: ProfileComponent
+    path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]
   },
   {
-    path: 'add', component: AddAccountComponent
+    path: 'add', component: AddAccountComponent, canActivate: [AuthGuardService]
   },
   {
-    path: 'list', component: ListAccountComponent
+    path: 'list', component: ListAccountComponent, canActivate: [AuthGuardService]
   },
   {
-    path: 'update', component: UpdateAccountComponent
+    path: 'update/:id', component: UpdateAccountComponent, canActivate: [AuthGuardService]
   }
 ]
 
