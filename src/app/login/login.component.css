@@ -1,0 +1,9 @@
+form{
+    width: 50%;
+    margin: auto;
+    background-color: rgb(215, 226, 222);
+    border-radius: 5px;
+}
+.login{
+    padding: 2em 2em 8em 2em;
+}
