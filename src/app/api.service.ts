@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import {AuthenticationService} from './authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,16 +8,21 @@ import {HttpClient} from '@angular/common/http';
 export class ApiService {
 
   url = 'http://localhost:5000/api'
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: AuthenticationService) { }
+  token = this.auth.getToken();
 
-  public getAllStudent(){
-    return this.http.get<any>(`${this.url}/get_all`);
+  public getAllStudent() {
+    return this.http.get<any>(`${this.url}/get_all`, {
+      headers: {
+        Authorization: `${this.auth.getToken()}`
+      }
+    });
   }
 
-  public deleteStudent(id){
+  public deleteStudent(id) {
     return this.http.delete<any>(`${this.url}/delete_stu/${id}`)
   }
-  public addStudent(fullname, birthday, email, level){
+  public addStudent(fullname, birthday, email, level) {
     var params = {
       fullname: fullname,
       birthday: birthday,
@@ -26,7 +32,7 @@ export class ApiService {
     return this.http.post<any>(`${this.url}/add_stu`, params);
   }
 
-  public updateStudent(id, fullname, birthday, email, level){
+  public updateStudent(id, fullname, birthday, email, level) {
     var params = {
       fullname: fullname,
       birthday: birthday,
@@ -36,8 +42,18 @@ export class ApiService {
     return this.http.post<any>(`${this.url}/update/${id}`, params);
   }
 
-  getCurrentAccount(id){
+  getCurrentAccount(id) {
     return this.http.get<any>(`${this.url}/get_current/${id}`);
   }
+
+  changePassword(username, currentP, newP) {
+    var params = {
+      username: username,
+      currentP: currentP,
+      newP: newP
+    };
+    return this.http.post<any>(`${this.url}/change_pass`, params);
+  }
+
 
 }

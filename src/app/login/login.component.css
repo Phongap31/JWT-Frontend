@@ -1,9 +1,12 @@
-form{
-    width: 50%;
-    margin: auto;
-    background-color: rgb(215, 226, 222);
-    border-radius: 5px;
-}
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
 .login{
-    padding: 2em 2em 8em 2em;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(../image/bg.jpg) no-repeat ;
+    background-size: cover;
+    height: 100%;
+    bottom: 0;
 }
+

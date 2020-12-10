@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {ApiService} from '../api.service';
+import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-add-account',
@@ -20,8 +20,10 @@ export class AddAccountComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addStudent(){
-    this.api.addStudent(this.student.fullname, this.student.birthday, this.student.email, this.student.level).subscribe(()=>{
+  addStudent() {
+    this.api.addStudent(this.student.fullname, this.student.birthday, this.student.email, this.student.level).subscribe(res => {
+      var result = JSON.stringify(res['result']);
+      alert(result);
       this.router.navigateByUrl('/list');
     });
   }
